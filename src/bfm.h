@@ -6,6 +6,11 @@ extern "C" {
 #endif  // __cplusplus
 
 #include <stdlib.h>
+#include <limits.h>
+#include <stdio.h>
+
+#define MIN(a,b) (a < b ? a : b)
+#define MAX(a,b) (a > b ? a : b)
 
 // Based on GFG article on Bellman-Ford-Moore Algorithm
 struct Edge {
@@ -18,7 +23,7 @@ struct Graph {
 };
 
 struct Graph *createGraph(int V, int E);
-void BellmanFord(struct Graph *graph, int src);
+int BellmanFord(struct Graph *graph, int src);
 
 #ifdef __cplusplus
 }
