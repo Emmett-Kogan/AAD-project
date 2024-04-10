@@ -10,14 +10,20 @@
 
 
 #define INFILE "grid.txt"
+#define OUTFILE "pathLength.txt"
+
 #define BUFFER_SIZE 32
 #define ERREXIT(s) { fprintf(stderr, s); exit(-1); }
 
-int countOccurences(char *str, char c, size_t length);
+
 
 struct Vector2 {
     int r, c;
 };
+
+int countOccurences(char *str, char c, size_t length);
+int getPathLength(int **graph, int rows, int cols, Vector2 src, Vector2 dest);  // each is 8 bytes which is the same size as a pointer
+int getWeight(Vector2 src, Vector2 dest);
 
 int main(int argc, char **argv) {
     // Open input file    
@@ -30,7 +36,9 @@ int main(int argc, char **argv) {
     fgets(buffer, BUFFER_SIZE, fptr);
     int rows = atoi(strtok(buffer, ",")), cols = atoi(strtok(NULL, " "));
 
+    #ifdef DEBUG 
     printf("Rows: %d\tCols: %d\n", rows, cols);
+    #endif
 
     // Initializing heights array (grid graph)
     int **heights = (int **) calloc(rows, sizeof(int *));
@@ -45,12 +53,14 @@ int main(int argc, char **argv) {
         int height = atoi(strtok(buffer, ","));
         int row = atoi(strtok(NULL, ","));
         int col = atoi(strtok(NULL, " "));
+        heights[row][col] = height; // this can be improved
 
         #ifdef DEBUG
         printf("(Height, Row, Col) = (%d, %d, %d)\n", height, row, col);
         #endif
     }
 
+    // Parse src and dest coordinates
     Vector2 src, dest;
 
     src.r = atoi(strtok(buffer, ","));
@@ -61,8 +71,20 @@ int main(int argc, char **argv) {
     dest.r = atoi(strtok(buffer, ","));
     dest.c = atoi(strtok(NULL, " "));
 
+    // Close input file as we are done reading it
+    fclose(fptr);
+
+    #ifdef DEBUG
     printf("Source:      (%d, %d)\n", src.r, src.c);
     printf("Destination: (%d, %d)\n", dest.r, dest.c);
+    #endif
+
+    int pathLength = getPathLength(heights, rows, cols, src, dest);
+
+    // Write path length to output file
+    fptr = fopen(OUTFILE, "w+");
+    fprintf(fptr, "%d\n", pathLength);
+    fclose(fptr);
 
     return 0;
 }
@@ -77,47 +99,38 @@ int countOccurences(char *str, char c, size_t length) {
     return count;
 }
 
-    // struct Graph *graph = createGraph(atoi(argv[1]), atoi(argv[2]));
+int getPathLength(int **graph, int rows, int cols, Vector2 src, Vector2 dest) {
+    // Construct edge list of graph :)
+    int num_edges = (2*rows*cols) - rows - cols;
+    Edge *edges = (Edge *) malloc(sizeof(Edge)*num_edges);
 
-    // // add edge 0-1 (or A-B in above figure)
-    // graph->edges[0].src = 0;
-    // graph->edges[0].dest = 1;
-    // graph->edges[0].weight = -1;
+    // I think I'm just going to convert the graph input into an edge list and then pass
+    // that into the GFG bellman-ford implementation and then just print the thing...
 
-    // // add edge 0-2 (or A-C in above figure)
-    // graph->edges[1].src = 0;
-    // graph->edges[1].dest = 2;
-    // graph->edges[1].weight = 4;
+    // an edge is a src node, dest node, and weight
+    int index = 0;
 
-    // // add edge 1-2 (or B-C in above figure)
-    // graph->edges[2].src = 1;
-    // graph->edges[2].dest = 2;
-    // graph->edges[2].weight = 3;
+    // top row
+    // bottom row
 
-    // // add edge 1-3 (or B-D in above figure)
-    // graph->edges[3].src = 1;
-    // graph->edges[3].dest = 3;
-    // graph->edges[3].weight = 2;
+    // sides
 
-    // // add edge 1-4 (or B-E in above figure)
-    // graph->edges[4].src = 1;
-    // graph->edges[4].dest = 4;
-    // graph->edges[4].weight = 2;
+    // middle
 
-    // // add edge 3-2 (or D-C in above figure)
-    // graph->edges[5].src = 3;
-    // graph->edges[5].dest = 2;
-    // graph->edges[5].weight = 5;
 
-    // // add edge 3-1 (or D-B in above figure)
-    // graph->edges[6].src = 3;
-    // graph->edges[6].dest = 1;
-    // graph->edges[6].weight = 1;
 
-    // // add edge 4-3 (or E-D in above figure)
-    // graph->edges[7].src = 4;
-    // graph->edges[7].dest = 3;
-    // graph->edges[7].weight = -3;
-    
-    //   // Function call
-    // return BellmanFord(graph, 0);
+    for (int i = 1; i < rows-1; i++) {
+        for (int j = 1; j < cols-1; j++) {
+            weights[index++] = COST
+        }
+    }
+
+    printf("index: %d\n", index);
+
+}
+
+int getWeight(Vector2 src, Vector2 dest) {
+    return MAX(-1, 1+)
+
+
+}

@@ -11,6 +11,7 @@ extern "C" {
 
 #define MIN(a,b) (a < b ? a : b)
 #define MAX(a,b) (a > b ? a : b)
+#define COST(a,b) (MAX(-1, 1+(a-b)))
 
 // Based on GFG article on Bellman-Ford-Moore Algorithm
 struct Edge {

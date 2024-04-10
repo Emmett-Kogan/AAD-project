@@ -14,4 +14,4 @@ aqueduct: main.cpp bfm.o
 	@$(CC) $(CFLAGS) -c $^ -o $@
 
 clean:
-	@rm -f main *.o
+	@rm -f aqueduct *.o
