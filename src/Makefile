@@ -2,13 +2,13 @@ CC=gcc
 CPP=g++
 CFLAGS=-Wall
 
-default: main
+default: aqueduct
 
-debug: CFLAGS += -g
-debug: main
+debug: CFLAGS += -g -D DEBUG
+debug: aqueduct
 
-main: main.c bfm.o
-	@$(CC) $(CFLAGS) -o $@ $^
+aqueduct: main.cpp bfm.o
+	@$(CPP) $(CFLAGS) -o $@ $^
 
 %.0: %.c
 	@$(CC) $(CFLAGS) -c $^ -o $@
