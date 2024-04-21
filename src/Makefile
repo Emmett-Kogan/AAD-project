@@ -7,8 +7,8 @@ default: aqueduct
 debug: CFLAGS += -g -D DEBUG
 debug: aqueduct
 
-aqueduct: main.cpp lib/bfm.o
-	@$(CPP) $(CFLAGS) -o $@ $^
+aqueduct: main.c lib/bfm.o
+	@$(CC) $(CFLAGS) -o $@ $^
 
 lib/%.0: lib/%.c
 	@$(CC) $(CFLAGS) -c $^ -o $@
