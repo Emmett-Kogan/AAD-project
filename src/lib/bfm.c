@@ -1,25 +1,15 @@
 #include "bfm.h"
 
-struct Graph *createGraph(int V, int E) 
-{
-    struct Graph *g = (struct Graph *) malloc(sizeof(struct Graph));
-    g->V = V;
-    g->E = E;
-    g->edges = (struct Edge *) malloc(sizeof(struct Edge)*E);
-    return g;
-}
-
-int BellmanFord(struct Graph *graph, int src)
+int *BellmanFord(struct Graph *graph, int src)
 {
     int V = graph->V;
     int E = graph->E;
-    int dist[V];
+    int *dist = (int *) malloc(sizeof(int)*V);
 
     // Initialize distance array
     for (int i = 0; i < V; i++)
         dist[i] = INT_MAX;
     dist[src] = 0;
-
 
     // Relaxing edges
     for (int i = 1; i <= V-1; i++) {
@@ -33,21 +23,15 @@ int BellmanFord(struct Graph *graph, int src)
         }
     }
 
-
     // Checking for negative weight cycles
     for (int i = 0; i < E; i++) {
         int u = graph->edges[i].src;
         int v = graph->edges[i].dest;
         int weight = graph->edges[i].weight;
 
-        if (dist[u] != INT_MAX && dist[u] + weight < dist[v]) {
-            printf("Negative edge?\n");
-            return -1;
-        }
+        if (dist[u] != INT_MAX && dist[u] + weight < dist[v])
+            ERREXIT("Negative edge?\n")
     }
 
-    for (int i = 0; i < V; i++)
-        printf("Vertex: %d\tDistance from src: %d\n", i, dist[i]);
-
-    return 0;
+    return dist;
 }

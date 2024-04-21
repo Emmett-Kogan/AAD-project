@@ -12,6 +12,7 @@ extern "C" {
 #define MIN(a,b) (a < b ? a : b)
 #define MAX(a,b) (a > b ? a : b)
 #define COST(a,b) (MAX(-1, 1+(b-a)))
+#define ERREXIT(s) { fprintf(stderr, s); exit(-1); }
 
 // Based on GFG article on Bellman-Ford-Moore Algorithm
 struct Edge {
@@ -23,8 +24,7 @@ struct Graph {
     struct Edge *edges;     // graph is an array of edges
 };
 
-struct Graph *createGraph(int V, int E);
-int BellmanFord(struct Graph *graph, int src);
+int *BellmanFord(struct Graph *graph, int src);
 
 #ifdef __cplusplus
 }
