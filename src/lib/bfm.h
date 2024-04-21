@@ -9,8 +9,8 @@ extern "C" {
 #include <limits.h>
 #include <stdio.h>
 
-#define MIN(a,b) (a < b ? a : b)
-#define MAX(a,b) (a > b ? a : b)
+#define MIN(a,b) ((a < b) ? a : b)
+#define MAX(a,b) ((a > b) ? a : b)
 #define COST(a,b) (MAX(-1, 1+(b-a)))
 #define ERREXIT(s) { fprintf(stderr, s); exit(-1); }
 

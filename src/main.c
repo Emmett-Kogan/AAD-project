@@ -13,8 +13,8 @@ struct Vector2 {
 int countOccurences(char *str, char c, size_t length);
 struct Graph *convert(void);
 void initEdge(struct Edge *e, struct Vector2 src, struct Vector2 dest);
-int opt(int **paths, struct Vector2 *B, int b_len);
-int opt_rec(int **paths, struct Vector2 *B, int b_len, int path_length);
+int opt(int **paths, struct Vector2 *B, int b_len, int src);
+int opt_rec(int **paths, struct Vector2 *B, int b_len, int src);
 
 static int rows, cols;
 static int **heights;
@@ -52,6 +52,7 @@ int main(int argc, char **argv) {
 
     // Parse src and dest coordinates
     struct Vector2 src, B[8];
+    memset(B, 0xFF, 8*sizeof(struct Vector2));
     int dest_count = 0;
 
     // Only ever 1 source node
@@ -82,14 +83,33 @@ int main(int argc, char **argv) {
     for (int i = 0; i < dest_count; i++)
         printf("%d: (%d, %d) -- %d\n", i, B[i].r, B[i].c, paths[0][B[i].r*cols + B[i].c]);
     #endif
+    
+    // I have the min distances to each node from each node (either src or in B)
+    // It would be best to make a NEW graph, with just edges between these nodes from the old one
+    // And then run a simpler TSP solution on that
+
+    struct Graph gp = {
+        .V = 1+dest_count,
+        .E = (1+dest_count)*dest_count,
+        .edges = (struct Edge *) malloc(sizeof(struct Edge)*(1+dest_count)*dest_count),
+    };
+
+    // Need to add edges to gp, where the only edges are
+    index = 0;
+    for (int i = 0; i < dest_count; i++) {
+        gp.edges[index].dest
+        gp.edges[index].src
+        gp.edges[index++].weight
+    }
+
 
     // Now I need to find the best permutation given the paths...
-    int path_length = opt(paths, B, dest_count);
+    int path_length = opt(paths, B, dest_count, 0);
 
     // Write path length to output file
-    // fptr = fopen(OUTFILE, "w+");
-    // fprintf(fptr, "%d\n", pathLength);
-    // fclose(fptr);
+    fptr = fopen(OUTFILE, "w+");
+    fprintf(fptr, "%d\n", path_length);
+    fclose(fptr);
 
     return 0;
 }
@@ -169,25 +189,39 @@ void initEdge(struct Edge *e, struct Vector2 src, struct Vector2 dest)
     and the return value should be the path length I guess
  */
 
-int opt(int **paths, struct Vector2 *B, int b_len)
+// when node == 0 -> src, otherwise it is an index into B pretty much
+
+int opt(int **paths, struct Vector2 *B, int b_len, int src)
 {
-    int *lengths = (int *) malloc(sizeof(int)*b_len);
-    // I don't know how for each will work if I'm removing and adding nodes to the set a bunch
+    printf("\nOpt called\n");
+    printf("b_len: %d\tsrc: %d\n", b_len, src);
+    // Validate arg
+    if (b_len < 1) {
+        printf("basecase hit\n");
+        return 0;
+    }
 
 
+    int length = INT_MAX;
+    struct Vector2 tmp;
+    for (int i = 0; i < 8; i++) {
+        printf("%d\n", i);
+        // If node has been removed then it is already in our path
+        if (B[i].r == -1 || B[i].c == -1) continue;
+        
+        // Remove the node from the list
+        tmp.r = B[i].r; tmp.c = B[i].c;
+        B[i].r = -1; B[i].c = -1;
 
+        // Recursive call for next layer
+        // printf("%d or %d+%d\n", length, paths[(src == 0 ? 0 : src-1)][tmp.r*cols + tmp.c], opt(paths, B, b_len-1, i+1));
+        printf("Recursivley calling opt\n");
+        length = MIN(paths[(src == 0 ? 0 : src-1)][tmp.r*cols + tmp.c] + opt(paths, B, b_len-1, i+1), length);
+        printf("\nOpt returned to\n");
+        printf("b_len: %d\tsrc: %d\n", b_len, src);
+        // Add the node back to the set for the next permutations
+        B[i].r = tmp.r; B[i].c = tmp.c;
+    }
 
-
-
-
-
-
-    return 0;
-}
-
-int opt_rec(int **paths, struct Vector2 *B, int b_len, int length)
-{
-
-
-    return 0;
+    return length;
 }
