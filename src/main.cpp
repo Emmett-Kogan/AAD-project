@@ -40,8 +40,19 @@ int main(int argc, char **argv) {
     // Get grid size
     char buffer[BUFFER_SIZE];
     fgets(buffer, BUFFER_SIZE, fptr);
+
+    // For the big test case, rows and cols was swapped around. Adding this to support it during testing
+    #ifdef BIG
+    cols = atoi(strtok(buffer, ","));
+    rows = atoi(strtok(NULL, " "));
+    #else
     rows = atoi(strtok(buffer, ","));
     cols = atoi(strtok(NULL, " "));
+    #endif
+
+
+
+
 
     // Initializing heights array (grid graph)
     heights = (int **) calloc(rows, sizeof(int *));

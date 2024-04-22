@@ -7,6 +7,9 @@ default: aqueduct
 debug: CFLAGS += -g -D DEBUG
 debug: aqueduct
 
+big: CFLAGS += -g -DDEBUG -DBIG
+big: aqueduct
+
 aqueduct: main.cpp lib/bfm.o
 	@$(CPP) $(CFLAGS) -o $@ $^
 

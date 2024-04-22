@@ -1,0 +1,747 @@
+
+real	0m0.081s
+user	0m0Output:
+0
+Rubric:
+0
+real	Output:
+-1
+Rubric:
+-1
+
+3:
+Output:
+10
+Rubric:
+10
+
+4:
+Output:
+19
+Rubric:
+19
+
+5:
+Output:
+13
+Rubric:
+13
+
+6:
+Output:
+13
+Rubric:
+13
+
+7:
+Output:
+3
+Rubric:
+3
+
+8:
+Output:
+44
+Rubric:
+44
+
+9:
+Output:
+28
+Rubric:
+28
+
+10:
+Output:
+41
+Rubric:
+41
+
+11:
+Output:
+52
+Rubric:
+52
+
+12:
+Output:
+9
+Rubric:
+9
+
+13:
+Output:
+36
+Rubric:
+36
+
+14:
+Output:
+69
+Rubric:
+69
+
+15:
+Output:
+47
+Rubric:
+47
+
+16:
+Output:
+52
+Rubric:
+52
+
+17:
+Output:
+61
+Rubric:
+61
+
+18:
+Output:
+23
+Rubric:
+23
+
+19:
+Output:
+86
+Rubric:
+86
+
+20:
+Output:
+48
+Rubric:
+48
+
+21:
+Output:
+67
+Rubric:
+67
+
+22:
+Output:
+123
+Rubric:
+123
+
+23:
+Output:
+79
+Rubric:
+79
+
+24:
+Output:
+80
+Rubric:
+80
+
+25:
+Output:
+87
+Rubric:
+87
+
+26:
+Output:
+9
+Rubric:
+9
+
+27:
+Output:
+152
+Rubric:
+152
+
+28:
+Output:
+66
+Rubric:
+66
+
+29:
+Output:
+59
+Rubric:
+59
+
+30:
+Output:
+153
+Rubric:
+153
+
+31:
+Output:
+91
+Rubric:
+91
+
+32:
+Output:
+63
+Rubric:
+63
+
+33:
+Output:
+165
+Rubric:
+165
+
+34:
+Output:
+143
+Rubric:
+143
+
+35:
+Output:
+113
+Rubric:
+113
+
+36:
+Output:
+160
+Rubric:
+160
+
+37:
+Output:
+183
+Rubric:
+183
+
+38:
+Output:
+158
+Rubric:
+158
+
+39:
+Output:
+62
+Rubric:
+62
+
+40:
+Output:
+22
+Rubric:
+22
+
+41:
+Output:
+152
+Rubric:
+152
+
+42:
+Output:
+197
+Rubric:
+197
+
+43:
+Output:
+106
+Rubric:
+106
+
+44:
+Output:
+147
+Rubric:
+147
+
+45:
+Output:
+219
+Rubric:
+219
+
+46:
+Output:
+98
+Rubric:
+98
+
+47:
+Output:
+113
+Rubric:
+113
+
+48:
+Output:
+200
+Rubric:
+200
+
+49:
+Output:
+114
+Rubric:
+114
+
+50:
+Output:
+119
+Rubric:
+119
+
+51:
+Output:
+233
+Rubric:
+233
+
+52:
+Output:
+223
+Rubric:
+223
+
+53:
+Output:
+286
+Rubric:
+286
+
+54:
+Output:
+277
+Rubric:
+277
+
+55:
+Output:
+257
+Rubric:
+257
+
+56:
+Output:
+125
+Rubric:
+125
+
+57:
+Output:
+101
+Rubric:
+101
+
+58:
+Output:
+270
+Rubric:
+270
+
+59:
+Output:
+281
+Rubric:
+281
+
+60:
+Output:
+204
+Rubric:
+204
+
+61:
+Output:
+327
+Rubric:
+327
+
+62:
+Output:
+297
+Rubric:
+297
+
+63:
+Output:
+155
+Rubric:
+155
+
+64:
+Output:
+301
+Rubric:
+301
+
+65:
+Output:
+375
+Rubric:
+375
+
+66:
+Output:
+282
+Rubric:
+282
+
+67:
+Output:
+221
+Rubric:
+221
+
+68:
+Output:
+224
+Rubric:
+224
+
+69:
+Output:
+92
+Rubric:
+92
+
+70:
+Output:
+198
+Rubric:
+198
+
+71:
+Output:
+213
+Rubric:
+213
+
+72:
+Output:
+290
+Rubric:
+290
+
+73:
+Output:
+54
+Rubric:
+54
+
+74:
+Output:
+66
+Rubric:
+66
+
+75:
+Output:
+24
+Rubric:
+24
+
+76:
+Output:
+49
+Rubric:
+49
+
+77:
+Output:
+37
+Rubric:
+37
+
+78:
+Output:
+83
+Rubric:
+83
+
+79:
+Output:
+54
+Rubric:
+54
+
+80:
+Output:
+69
+Rubric:
+69
+
+81:
+Output:
+62
+Rubric:
+62
+
+82:
+Output:
+40
+Rubric:
+40
+
+83:
+Output:
+79
+Rubric:
+79
+
+84:
+Output:
+52
+Rubric:
+52
+
+85:
+Output:
+51
+Rubric:
+51
+
+86:
+Output:
+58
+Rubric:
+58
+
+87:
+Output:
+73
+Rubric:
+73
+
+88:
+Output:
+65
+Rubric:
+65
+
+89:
+Output:
+59
+Rubric:
+59
+
+90:
+Output:
+57
+Rubric:
+57
+
+91:
+Output:
+28
+Rubric:
+28
+
+92:
+Output:
+44
+Rubric:
+44
+
+93:
+Output:
+61
+Rubric:
+61
+
+94:
+Output:
+58
+Rubric:
+58
+
+95:
+Output:
+331
+Rubric:
+331
+
+96:
+Output:
+401
+Rubric:
+401
+
+97:
+Output:
+287
+Rubric:
+287
+
+98:
+Output:
+509
+Rubric:
+509
+
+99:
+Output:
+339
+Rubric:
+339
+
+100:
+Output:
+670
+Rubric:
+670
+
+Running test.sh
+Example1:
+Output:
+37
+Rubric:
+37
+Spec:
+Output:
+3
+Rubric:
+3
+TestCase1:
+Output:
+113
+Rubric:
+113
+TestCase2:
+Output:
+48
+Rubric:
+48
+6s
+user	0m0.000s
+sys	0m0.015s
+
+real	0m0.027s
+user	0m0.000s
+sys	0m0.015s
+
+real	0m0.051s
+user	0m0.015s
+sys	0m0.015s
+
+real	0m0.046s
+user	0m0.000s
+sys	0m0.031s
+
+real	0m0.046s
+user	0m0.015s
+sys	0m0.015s
+
+real	0m0.046s
+user	0m0.000s
+sys	0m0.015s
+
+real	0m0.028s
+user	0m0.000s
+sys	0m0.015s
+
+real	0m0.029s
+user	0m0.000s
+sys	0m0.000s
+
+real	0m0.028s
+user	0m0.000s
+sys	0m0.015s
+
+real	0m0.046s
+user	0m0.000s
+sys	0m0.031s
+
+real	0m0.046s
+user	0m0.000s
+sys	0m0.031s
+
+real	0m0.046s
+user	0m0.000s
+sys	0m0.015s
+
+real	0m0.046s
+user	0m0.000s
+sys	0m0.015s
+
+real	0m0.046s
+user	0m0.000s
+sys	0m0.015s
+
+real	0m0.046s
+user	0m0.000s
+sys	0m0.031s
+
+real	0m0.028s
+user	0m0.015s
+sys	0m0.000s
+
+real	0m0.046s
+user	0m0.000s
+sys	0m0.015s
+
+real	0m0.046s
+user	0m0.000s
+sys	0m0.015s
+
+real	0m0.046s
+user	0m0.000s
+sys	0m0.000s
+
+real	0m0.046s
+user	0m0.000s
+sys	0m0.015s
+
+real	0m0.046s
+user	0m0.015s
+sys	0m0.000s
+
+real	0m0.046s
+user	0m0.000s
+sys	0m0.015s
+
+real	0m2.045s
+user	0m0.000s
+sys	0m0.015s
+
+real	0m2.045s
+user	0m0.000s
+sys	0m0.031s
+
+real	0m2.013s
+user	0m0.015s
+sys	0m0.000s
+
+real	0m2.003s
+user	0m0.000s
+sys	0m0.015s
+
+real	0m2.014s
+user	0m0.000s
+sys	0m0.015s
+
+real	0m3.475s
+user	0m0.000s
+sys	0m0.030s
+
+real	0m0.061s
+user	0m0.000s
+sys	0m0.030s
+
+real	0m0.028s
+user	0m0.015s
+sys	0m0.031s
+
+real	0m0.151s
+user	0m0.000s
+sys	0m0.000s
+
+real	0m0.047s
+user	0m0.000s
+sys	0m0.015s
