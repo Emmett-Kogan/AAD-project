@@ -5,14 +5,13 @@ All I know is that for now I should implement Bellman-Ford-Moore
 1. Emmett Kogan
 
 ## Build Instructions
-1. Use the makefile
+The Makefile has 3 rules, `debug` which compiles both the bfm object file and aqueduct with `DEBUG` defined. This may have leftover unwanted prints/additional information about how the program is being run outputted on `stdout` and `stderr`. Furthermore, `DEBUG` changes the way the program looks for `grid.txt`. Instead of assuming it is in `./grid.txt` it takes a command line arguement that is a relative path to the desired input file (this was just done for easier testing). 
 
-## Notes
-There are currently some issues with the assignment doc where the example they gave is being updated soon and the bounds of station coordinates should be adjusted as they should be [0, M) for rows and [0, N) for columns, not inclusive like the document currently states.
+There is also the `big` rule which does all of what `debug` does, but also changes the order in which rows and columns are inputted into the program so that it could work with the large randomly genrated testcases someone posted on discord.
 
-For final submission, I need to change the way the input file is passed in so that it's hardcoded to `grid.txt` and not a cmdline arg
+As specified, the `default` rule builds a program that fits the specifications as far as input file, output file and I *think* all debug statements are inside ifdefs (this is also the first rule so just running `make` runs this one).
 
-And need to do make not make debug
+## Report
 
 ## Explanation
 
