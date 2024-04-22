@@ -50,10 +50,6 @@ int main(int argc, char **argv) {
     cols = atoi(strtok(NULL, " "));
     #endif
 
-
-
-
-
     // Initializing heights array (grid graph)
     heights = (int **) calloc(rows, sizeof(int *));
     for (int i = 0; i < rows; i++)

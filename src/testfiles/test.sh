@@ -11,6 +11,7 @@ for i in "${testdirs[@]}"; do
         echo "Failed test $i"
     fi
 
+    # Just paranoid because of the times
     echo "Output:"
     cat pathLength.txt
     echo
